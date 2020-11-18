@@ -64,7 +64,7 @@ background(bimage);
   bannana();
 obs();
   monkey.velocityY=monkey.velocityY+0.8
-  if(touches.length>0||keyDown("space") && monkey.y>=height-150){
+  if(touches.length>1||keyDown("space") && monkey.y>=height-150){
 monkey.velocityY=-24;  
    touches=[]
   }
@@ -93,10 +93,11 @@ bgroup.destroyEach();
     if(mousePressedOver(restart)){
 reset();
     }
-if(touches.length>0 || keyDown("SPACE")) {      
-reset();
-touches = []
-}
+    
+    if(touches.length>0 || keyDown("SPACE")) {      
+      reset();
+      touches = []
+    }
   }
   
   drawSprites();
